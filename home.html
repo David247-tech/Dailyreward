@@ -207,7 +207,7 @@
         // Function to update the balance by 150000 when the modal is closed
         function updateBalance() {
             localStorage.setItem('balance', 150000);
-            document.getElementById('balance').textContent = `&#8358;150000`;
+            document.getElementById('balance').textContent = `150000`;
         }
     
         // Function to close the modal and update the balance
@@ -254,8 +254,8 @@
         // Retrieve the balance and greeting message from local storage when the page loads
         window.onload = function() {
             initializeBalance(); // Set initial balance to zero if not already set
-            const balance = parseInt(localStorage.getItem('balance')) || 0;
-            document.getElementById('balance').textContent = `&#8358;${balance}`;
+            const balance = parseInt(localStorage.getItem('balance')) || 150000;
+            document.getElementById('balance').textContent = `${balance}`;
     
             const currentHour = new Date().getHours();
             if (currentHour < 6) {
@@ -270,7 +270,7 @@
         function clearLocalStorage() {
             localStorage.clear();
             alert("Local storage cleared successfully.");
-            document.getElementById('balance').textContent = `&#8358;0`; // Reset balance display to zero
+            document.getElementById('balance').textContent = `0`; // Reset balance display to zero
         }
     
         // Get the button element
